@@ -27,8 +27,8 @@ daily_steps = st.number_input("Daily Steps", min_value=3000, max_value=12000, va
 
 # Categorical inputs (assuming you have label encoding for these)
 gender = st.selectbox("Gender", options=["Male", "Female"])
-occupation = st.selectbox("Occupation", options=["Software Engineer", "Doctor", "Sales", "Nurse", "Other"])
-bmi_category = st.selectbox("BMI Category", options=["Normal", "Overweight", "Obese", "Underweight"])
+occupation = st.selectbox("Occupation", options=["Accountant","Doctor","Engineer","Lawyer","Manager","Nurse","Sales Representative","Salesperson","Scientist","Software Engineer","Teacher"])
+bmi_category = st.selectbox("BMI Category", options=["Normal", "Normal Weight", "Obese", "Overweight"])
 
 ########################################
 # 2. Binning Functions
@@ -88,15 +88,21 @@ def bin_daily_steps(val):
 ########################################
 
 # These mappings should match how you label-encoded them in your training code
-gender_map = {"Male": 0, "Female": 1}
+gender_map = {"Male": 1, "Female": 0}
 occupation_map = {
-    "Software Engineer": 0,
+    "Accountant": 0,
     "Doctor": 1,
-    "Sales": 2,
-    "Nurse": 3,
-    "Other": 4
+    "Engineer": 2,
+    "Lawyer": 3,
+    "Manager": 4,
+    "Nurse": 5,
+    "Sales Representative": 6,
+    "Salesperson": 7,
+    "Scientist": 8,
+    "Software Engineer": 9,
+    "Teacher": 10
 }
-bmi_map = {"Normal": 0, "Overweight": 1, "Obese": 2, "Underweight": 3}
+bmi_map = {"Normal": 0, "Normal Weight": 1, "Obese": 2, "overweight": 3}
 
 # If your notebook had blood pressure binned or encoded, do similarly here
 blood_pressure_code = 0  # or any logic needed
