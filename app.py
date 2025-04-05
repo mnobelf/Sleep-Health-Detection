@@ -24,7 +24,7 @@ daily_steps = st.number_input("Daily Steps", min_value=3000, max_value=10000, va
 
 # Categorical inputs (update the mapping as per your encoding)
 gender = st.selectbox("Gender", options=["Male", "Female"])
-occupation = st.selectbox("Occupation", options=["Software Engineer", "Doctor", "Sales", "Nurse", "Other"], value = "Other")
+occupation = st.selectbox("Occupation", options=["Software Engineer", "Doctor", "Sales", "Nurse", "Other"])
 bmi_category = st.selectbox("BMI Category", options=["Normal", "Overweight", "Obese", "Underweight"])
 blood_pressure = st.selectbox("Blood Pressure", options=["Normal", "High"])
 
