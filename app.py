@@ -139,5 +139,5 @@ if st.button("Predict Sleep Disorder"):
     prediction = model.predict(input_df)
     # Map prediction back to labels
     # (Ensure these match your training label encoding for "Sleep Disorder")
-    prediction_label = {0: "None", 1: "Sleep Apnea", 2: "Insomnia"}.get(prediction[0], "Unknown")
+    prediction_label = {0: "Insomnia", 1: "None", 2: "Sleep Apnea"}.get(prediction[0], "Unknown")
     st.success(f"Predicted Sleep Disorder: {prediction_label}")
