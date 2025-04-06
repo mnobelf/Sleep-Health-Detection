@@ -18,7 +18,7 @@ st.write("Enter your details to predict the sleep disorder:")
 
 # Numeric inputs
 age = st.number_input("Age", min_value=20, max_value=80, value=40)
-sleep_duration = st.number_input("Sleep Duration (hours)", min_value=5.0, max_value=9.0, value=7.0, step=0.1)
+sleep_duration = st.number_input("Sleep Duration (hours)", min_value=1.0, max_value=13.0, value=7.0, step=0.1)
 quality_of_sleep = st.number_input("Quality of Sleep (1-10)", min_value=1, max_value=10, value=7)
 physical_activity = st.number_input("Physical Activity Level (mins/day)", min_value=30, max_value=90, value=60)
 stress_level = st.number_input("Stress Level (1-10)", min_value=1, max_value=10, value=5)
@@ -29,6 +29,7 @@ daily_steps = st.number_input("Daily Steps", min_value=3000, max_value=12000, va
 gender = st.selectbox("Gender", options=["Male", "Female"])
 occupation = st.selectbox("Occupation", options=["Accountant","Doctor","Engineer","Lawyer","Manager","Nurse","Sales Representative","Salesperson","Scientist","Software Engineer","Teacher"])
 bmi_category = st.selectbox("BMI Category", options=["Normal", "Underweight", "Obese", "Overweight"])
+blood_pressure = st.selectbox("Blood Pressure", options=["Normal", "High"])
 
 ########################################
 # 2. Binning Functions
@@ -104,8 +105,9 @@ occupation_map = {
 }
 bmi_map = {"Normal": 0, "Underweight": 1, "Obese": 2, "overweight": 3}
 
+
 # If your notebook had blood pressure binned or encoded, do similarly here
-blood_pressure_code = 0  # or any logic needed
+blood_pressure_code = {"Normal": 0, "High": 1}.get(blood_pressure, 0)
 
 ########################################
 # 4. Convert Raw Inputs -> Binned/Encoded -> DataFrame
@@ -131,6 +133,7 @@ input_df = pd.DataFrame({
     'Daily Steps': [binned_steps]
 })
 
+st.write(input_df)
 ########################################
 # 5. Predict
 ########################################
