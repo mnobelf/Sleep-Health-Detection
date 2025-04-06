@@ -103,7 +103,7 @@ occupation_map = {
     "Software Engineer": 9,
     "Teacher": 10
 }
-bmi_map = {"Normal": 0, "Underweight": 1, "Obese": 2, "overweight": 3}
+bmi_map = {"Normal": 0, "Underweight": 1, "Obese": 2, "Overweight": 3}
 
 
 # If your notebook had blood pressure binned or encoded, do similarly here
