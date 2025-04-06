@@ -27,7 +27,7 @@ daily_steps = st.number_input("Daily Steps", min_value=3000, max_value=12000, va
 
 # Categorical inputs (assuming you have label encoding for these)
 gender = st.selectbox("Gender", options=["Male", "Female"])
-occupation = st.selectbox("Occupation", options=["Accountant","Doctor","Engineer","Lawyer","Manager","Nurse","Sales Representative","Salesperson","Scientist","Software Engineer","Teacher"])
+# occupation = st.selectbox("Occupation", options=["Accountant","Doctor","Engineer","Lawyer","Manager","Nurse","Sales Representative","Salesperson","Scientist","Software Engineer","Teacher"])
 bmi_category = st.selectbox("BMI Category", options=["Normal", "Underweight", "Obese", "Overweight"])
 blood_pressure = st.selectbox("Blood Pressure", options=["Normal", "High"])
 
@@ -122,7 +122,6 @@ binned_steps = bin_daily_steps(daily_steps)
 input_df = pd.DataFrame({
     'Gender': [gender_map[gender]],
     'Age': [binned_age],
-    'Occupation': [occupation_map[occupation]],
     'Sleep Duration': [binned_sleep],
     'Quality of Sleep': [quality_of_sleep],
     'Physical Activity Level': [binned_physical],
